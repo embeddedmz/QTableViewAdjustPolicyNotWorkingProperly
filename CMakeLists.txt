@@ -11,7 +11,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
+#find_package(QT NAMES Qt6 COMPONENTS Widgets REQUIRED)
+find_package(QT NAMES Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 set(PROJECT_SOURCES
@@ -30,6 +31,8 @@ set(PROJECT_SOURCES
         PH66Status.ui
         Shared.cpp
         Shared.h
+        StressTestManager.cpp
+        StressTestManager.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
