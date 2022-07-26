@@ -55,8 +55,8 @@ void MainWindow::stopStressTest()
         return;
     }
 
-    QMetaObject::invokeMethod(m_stressTestManager, "setKeepStressTesting",
-        Qt::QueuedConnection, Q_ARG(bool, false));
+    /*QMetaObject::invokeMethod(m_stressTestManager, "setKeepStressTesting",
+        Qt::QueuedConnection, Q_ARG(bool, false));*/
 
     m_stressTestThread->quit(); // QT bug : doesn't work since wait() will wait indefinitely
     m_stressTestThread->wait();
