@@ -37,6 +37,9 @@ void MainWindow::startStressTest()
     QObject::connect(m_stressTestManager, &StressTestManager::stressTestCompleted,
         this, &MainWindow::onStressTestFinished);
 
+    connect(m_stressTestThread, &QThread::finished,
+            m_stressTestManager, &StressTestManager::onThreadFinishTest);
+
     m_stressTestManager->moveToThread(m_stressTestThread);
     m_stressTestThread->start();
 

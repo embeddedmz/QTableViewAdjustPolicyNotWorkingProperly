@@ -48,6 +48,11 @@ void StressTestManager::startStressTest()
     emit stressTestCompleted();
 }
 
+void StressTestManager::onThreadFinishTest()
+{
+    QThread::sleep(5);
+}
+
 void StressTestManager::processEvents()
 {
     auto const dispatcher = QThread::currentThread()->eventDispatcher();

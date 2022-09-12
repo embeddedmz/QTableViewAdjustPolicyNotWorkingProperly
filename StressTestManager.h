@@ -16,6 +16,8 @@ public slots:
     void setKeepStressTesting(const bool keep);
     void startStressTest();
 
+    void onThreadFinishTest();
+
 signals:
     void stressTestCompleted();
 
